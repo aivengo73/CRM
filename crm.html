@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CRM</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<section class="crm">
+		<div class="container">
+
+			<h1 class="crm__title">ДОБАВИТЬ ТОВАР</h1>
+			
+			<a class="crm__link" href="#">
+				<img class="crm__img" src="images/cross.svg" alt="">
+			</a>
+
+			<form class="grid-box" action="https://jsonplaceholder.typicode.com/posts" method="post">
+				<label class="item" for="name">
+					<span class="item__span">НАИМЕНОВАНИЕ</span>
+					<input class="item__input" type="text" id="name" name="name">
+				</label>
+
+				<label class="item" for="category">
+					<span class="item__span">КАТЕГОРИЯ</span>
+					<input class="item__input" type="text" id="category" name="category">
+				</label>
+
+				<label class="item" for="units">
+					<span class="item__span">ЕДИНИЦЫ ИЗМЕРЕНИЯ</span>
+					<input class="item__input" type="text" id="units" name="units">
+				</label>
+
+				<div class="item-grup">
+					<span class="grup-span discont">ДИСКОНТ</span>
+					<div class="grup-div">
+						<label class="item ">
+							<input class="item__input checkbox" type="checkbox" value="first">
+						</label>
+						<label class="item">
+							<input class="item__input discont" type="text" name="text" size="17">
+						</label>
+					</div>
+				</div>
+
+				<label class="item">
+					<span class="item__span">ОПИСАНИЕ</span>
+					<textarea class="item__input description" name="description"></textarea>
+				</label>
+
+				<label class="item" for="count">
+					<span class="item__span">КОЛИЧЕСТВО</span>
+					<input class="item__input" type="number" id="count" name="count">
+				</label>
+
+				<label class="item" for="price">
+					<span class="item__span">ЦЕНА</span>
+					<input class="item__input" type="text" id="price" name="price">
+				</label>
+			</form>
+			<a class="button" href="#">ДОБАВИТЬ ТОВАР</a>
+		</div>
+	</section>
+</body>
+
+</html>
