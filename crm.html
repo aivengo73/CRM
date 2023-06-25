@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CRM</title>
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -14,11 +15,10 @@
 
 			<h1 class="crm__title">ДОБАВИТЬ ТОВАР</h1>
 			
-			<a class="crm__link" href="#">
-				<img class="crm__img" src="images/cross.svg" alt="">
-			</a>
-
 			<form class="grid-box" action="https://jsonplaceholder.typicode.com/posts" method="post">
+				<button class="crm__reset" type="reset">
+					<img class="crm__img" src="images/cross.svg" alt="">
+				</button>
 				<label class="item" for="name">
 					<span class="item__span">НАИМЕНОВАНИЕ</span>
 					<input class="item__input" type="text" id="name" name="name">

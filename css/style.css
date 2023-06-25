@@ -1,10 +1,69 @@
-/* @font-face {
-  src: url("fonts/Roboto-Regular.ttf") format("ttf");
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-} */
+/* !!            global              */
 
+html {
+	position: relative;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	min-width: 320px;
+	min-height: 100vh;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+	height: auto;
+}
+
+button {
+	padding: 0;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+fieldset,
+blockquote {
+	margin: 0;
+}
+
+iframe {
+	border: none;
+}
+
+/*
+Доступно скрываю элементы
+*/
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+/*!!            Общие стили             */
 
 input,
 h1,
@@ -12,13 +71,8 @@ h2,
 h3,
 p,
 a {
-	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-
-*, *:after, *:before {
-  box-sizing: inherit;
 }
 
 body {
@@ -116,7 +170,6 @@ span {
 	margin-left: 352px;
 	padding: 10px 25px;
 	color: #ffffff;
-	text-decoration: none;
 	background-color: #6D5BD0;
 	border-radius: 5px;
 	cursor: pointer;
