@@ -59,8 +59,8 @@ iframe {
 */
 
 .visually-hidden {
-  position: fixed;
-  transform: scale(0);
+	position: fixed;
+	transform: scale(0);
 }
 
 /*!!            Общие стили             */
@@ -76,20 +76,30 @@ a {
 }
 
 body {
-  font-family: sans-serif;
+	font-family: Arial, sans-serif;
 }
 .crm {
+	margin-top: 50px;
 	position: relative;
 	width: 792px;
 	height: auto;
 	margin: 0 auto;
-	border: 1px solid #6e6893;
+	border: 1px solid rgb(241, 222, 227);
+	background-color: rgb(244, 242, 255);
+}
+.overlay {
+	background-color: rgba(244, 242, 255, 0.3);
+}
+
+.crm__reset {
+	color: red;
 }
 
 .crm__img {
 	position: absolute;
 	top: 20px;
 	left: 742px;
+	
 }
 
 .container {
@@ -98,9 +108,9 @@ body {
 }
 
 .crm__title {
-	margin-top: 32px;
-	margin-bottom: 43px;
-	color: #6e6893;
+	padding-top: 32px;
+	padding-bottom: 43px;
+	color: rgb(110, 104, 147);
 }
 
 .grid-box {
@@ -110,58 +120,65 @@ body {
 	padding: 28px;
 	margin-bottom: 32px;
 	border-radius: 10px;
-	border: 1px solid #000000;
-}
-
-.item__span {
-	font-family: Arial, sans-serif;
-  font-style: normal;
-  font-size: 12px;
-  font-weight: 400;
+	border: 1px solid rgb(241, 222, 227);
+	background-color: rgb(255, 255, 255);
 }
 
 .grup-span {
 	font-family: Arial, sans-serif;
-  font-style: normal;
-  font-size: 12px;
-  font-weight: 400;
+	font-style: normal;
+	font-size: 12px;
+	font-weight: 400;
 }
 
+.item {
+	display: block;
+	padding-bottom: 5px;
+	font-family: Arial, sans-serif;
+	font-style: normal;
+	font-size: 12px;
+	font-weight: 400;
+}
 
 .item__input {
 	margin: 0;
 	padding: 0;
 	width: 524px;
 	height: 40px;
+	appearance: none;
 	border-radius: 8px;
+	border: groove;
+	background-color: rgb(244, 242, 255);
+	cursor: pointer;
+}
+
+.item__input:hover {
+	content: "";
+	background-color: rgb(241, 222, 227);
+	border: inset;
 }
 
 .grup-div {
 	display: flex;
-	}
+}
 
 .discont {
 	width: 474px;
 	margin-left: 10px;
-	border-radius: 8px;
 }
 
 .checkbox {
 	width: 40px;
 	height: 40px;
-}
-
-span {
-	display: block;
-	margin-bottom: 5px;
-	margin-left: 10px;
+	appearance: none;
+	border-radius: 8px;
+	cursor: pointer;
 }
 
 .description {
 	min-height: 40px;
 	max-height: 112px;
 	max-width: 524px;
-	border: 2px solid #000000;
 }
 
 .button {
@@ -169,8 +186,13 @@ span {
 	margin-bottom: 28px;
 	margin-left: 352px;
 	padding: 10px 25px;
-	color: #ffffff;
-	background-color: #6D5BD0;
+	color: rgb(255, 255, 255);
+	background-color: rgb(109, 91, 208);
 	border-radius: 5px;
 	cursor: pointer;
+}
+
+.button:hover {
+	border: none;
+	background-color: rgb(57, 30, 209);
 }
