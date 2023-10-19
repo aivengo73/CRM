@@ -1,13 +1,13 @@
 'use strict';
 
-const productName = 'Banana';
-const productСont = 100;
-const productCategory = 'foods';
-const productPrice = 70;
+const productsName = 'Banana';
+const productsСont = 100;
+const productsCategory = 'foods';
+const productsPrice = 70;
 
-console.log( productName );
+console.log( productsName );
 
-const sum = productСont * productPrice;
+const sum = productsСont * productsPrice;
 
 console.log( sum );
 
