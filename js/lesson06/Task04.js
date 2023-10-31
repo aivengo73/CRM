@@ -57,5 +57,5 @@ function getAveragePriceGoods() {
 	sum = sum / item;
 	return sum;
 }
-let res = getAveragePriceGoods(array); ''
+let res = getAveragePriceGoods(array); 
 console.log('Средняя стоимость одного товара:', res); // 4087.5
