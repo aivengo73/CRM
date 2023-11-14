@@ -11,45 +11,71 @@
 // если пользователь ввел не число, то выводит “Введи число!”;
 // если пользователь нажимает “Отмена”, то игра заканчивается.
 
+
 let num = Math.floor(Math.random() * 100);
 console.log(num);
 
-let numberUser = +prompt('Введите число от 1 до 100', '2');
+let numberUser = prompt('Введите число от 1 до 100', '2');
 
 function randomNum(numberUser) {
-	let res = '';
-console.log(numberUser);
-
-             /* отмена не работает */
-
-	// if (numberUser === 0) {
-	// 	return;
-	// }
-
- 	 if (!Number.isFinite(numberUser) || !Number.isInteger(numberUser) || numberUser > 100 || numberUser < 1) {
-	
-		numberUser = +prompt('Введите число', '');
-	return	randomNum(numberUser);
-	};
-	
-
-
-	if (numberUser > num) {
-	
-		numberUser = +prompt('Меньше! Сделайте ещё одну попытку', '');
-		console.log(numberUser);
-		return randomNum(numberUser);
+	if (numberUser === null) {
+		return;
 	};
 
-	if (numberUser < num) {
-		numberUser = +prompt('Больше! Сделайте ещё одну попытку', '');
-		console.log(numberUser);
-		return randomNum(numberUser);
+if(Number.isNaN(Number(numberUser))) {
+	return randomNum(prompt('Введите число', ''));
+};
+
+	if (+numberUser > num) {
+		return randomNum(prompt('Меньше! Сделайте ещё одну попытку', ''));
 	};
 
-	if (numberUser === num) {
+	if (+numberUser < num) {
+		return randomNum( prompt('Больше! Сделайте ещё одну попытку', ''));
+	};
+
+	if (+numberUser === num) {
 		res = alert('Правильно!');
 	};
-	return res;
 }
 randomNum(numberUser);
+
+
+// if (!Number.isFinite(numberUser) || !Number.isInteger(numberUser) || numberUser > 100 || numberUser < 1) {
+	
+// 	return randomNum(prompt('Введите число', ''));
+// 	};
+
+// 1 проверка на null 
+// 2 проверка на число и зациклить 
+// 3 подсчет результат и его вывод
+// 4 сранвнение результата и либо завершение либо на новый круг
+// Сергей Новиков — Вчера, в 19:59
+// О том что говорил
+
+
+// Задается диапозон чисел
+// в зависимости от диапозона выставляются количество попыток
+// потом генерируется число которое нужно угадать  которое лежит в этом диапозоне
+// после чего начинается игра и пользователь вводит число
+// происходит запись числа пользователя в массив
+// если пользователь угадал то конце и игры и вывод результата
+// в противном случае пользователь угадывают заново число и цикл повторяется
+
+// Какие числа вы хотите использовать для диапазона? (например, от 1 до 100)
+// Введите первое число: 50
+// Введите второе число: 100
+
+// Отлично, я загадал случайное число в этом диапазоне. У вас будет 15 попыток, чтобы угадать его.
+
+// Введите ваше число: 75
+// Моё число больше.
+
+// Введите ваше число: 60
+// Моё число меньше.
+
+// Введите ваше число: 70
+// Поздравляю, вы угадали число!
+
+// Вы использовали следующие числа:
+// 50, 100, 75, 60, 70
