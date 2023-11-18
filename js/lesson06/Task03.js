@@ -17,9 +17,26 @@
 
 // ['Mr Noah', 'Mr Liam', 'Mr Mason', 'Mr Jacob', 'Mr. Robot', 'Mr William', 'Mr Ethan', 'Mr Michael', 'Mr Alexander'];
 
-             /* 1 */
+            /* 1 */
+						const names= ['Noah', 'Liam', 'Mason', 'Jacob', 'Robot', 'William', 'Ethan', 'Michael', 'Alexander'];
+						const addPrefix1 = (names, prefix) => names.map(names => `${prefix} ${names}`);
+						
+						const pref = addPrefix1(names,'Mr');
+						console.log(pref); /* [
+							'Mr  Noah',
+							'Mr  Liam',
+							'Mr  Mason',
+							'Mr  Jacob',
+							'Mr  Robot',
+							'Mr  William',
+							'Mr  Ethan',
+							'Mr  Michael',
+							'Mr  Alexander'
+						]
+						*/ 
 
-const names= ['Noah', 'Liam', 'Mason', 'Jacob', 'Robot', 'William', 'Ethan', 'Michael', 'Alexander'];
+
+             /* 2 */
 
 function addPrefix(names, prefix ) {
 	const arr = [];
@@ -34,24 +51,4 @@ console.log(res); /* ["Mr Noah","Mr Liam","Mr Mason","Mr Jacob","Mr Robot","Mr W
 
 
 
-            /* 2 */
 
-function addPrefix1(names, prefix) {
-
- return names.map(names => `${prefix} ${names}`);
-	
-}
-
-const pref = addPrefix1(names,'Mr');
-console.log(pref); /* [
-  'Mr  Noah',
-  'Mr  Liam',
-  'Mr  Mason',
-  'Mr  Jacob',
-  'Mr  Robot',
-  'Mr  William',
-  'Mr  Ethan',
-  'Mr  Michael',
-  'Mr  Alexander'
-]
-*/

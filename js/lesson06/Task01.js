@@ -19,14 +19,9 @@
 // Результат функции: массив из всех студентов, которые сдали экзамен.
 
 
-let allStudents = ['Иванов','Петров', 'Сидоров', 'Кузнецов', 'Смирнов', 'Попов', 'Соколов'];
-let failedStudents = ['Сидоров', 'Смирнов', 'Попов'];
+const allStudents = ['Иванов','Петров', 'Сидоров', 'Кузнецов', 'Смирнов', 'Попов', 'Соколов'];
+const failedStudents = ['Сидоров', 'Смирнов', 'Попов'];
 
-function filter() {
+const arr = allStudents.filter(item => !failedStudents.includes(item));
 
-	let arr  = allStudents.filter(item => !failedStudents.includes(item)); 
-	return arr;
-}
-let res = filter(allStudents, failedStudents);
-console.log(res);
-
+console.log(arr);
