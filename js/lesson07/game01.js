@@ -1,5 +1,6 @@
 'use strict';
-// Создайте файл game01.js
+
+//!!    ЗАДАЧА
 
 // Написать простой игровой бот "Угадай число", который умеет следующее:
 
@@ -12,38 +13,61 @@
 // если пользователь нажимает “Отмена”, то игра заканчивается.
 
 
-let num = Math.floor(Math.random() * 100);
+//!!      АЛГОРИТМ РЕШЕНИЯ
+
+/*  1. Формируем случайное число и сохраняем его в const num;
+	2. Создаём функцию проверку на целое, натуральное число
+	3. Объявляем function(), задача которой принимать от пользователя число, сравнивая его с рондомным от бота, формировать ответы и выводить их на экран пользователя
+	4. Внутри тела function() создаём переменную numUser. В неё будет приходить ответ от пользователя через prompt
+	5. Делаем проверку на "отмену игры".
+	6. Просим пользователя ввести число через prompt, делаем проверку на число введённого значения и сохраняем его в переменную numUser(пункт 4). Если это не число, зацикливаем на функции -проверке пока введённое значение не будет числом. При этом выводим пользователю на экран "Введите число".
+	7. Сравниваем значения чисел бота и пользователя.Если число пользователя меньше случайного числа бота Выводим на эран "Больше!". и зацикливаем программу. Делаем рекурсию.
+	8. - "Меньше" -//-
+	9.- "Правильно" делаем return со значением числа пользователя и выводом на экран "Правильно"
+	10. Заканчиваем игру.*/
+
+
+const num = Math.floor(Math.random() * 100);
 console.log(num);
 
-let numberUser = prompt('Введите число от 1 до 100', '2');
 
-function randomNum(numberUser) {
-	if (numberUser === null) {
+
+//  numUser = 0;
+
+function randomNum() {
+
+	const	numUser = prompt("Введите число от 1 до 100", '');
+
+	const isNumber = function (numUser) {
+		return !isNaN(parseFloat(numUser)) && isFinite(numUser);
+	};
+
+	if (numUser === null) {
 		return;
-	};
+	}
 
-if(Number.isNaN(Number(numberUser))) {
-	return randomNum(prompt('Введите число', ''));
-};
+	if (!isNumber(numUser)) {
+		alert('Введите число!');
+		return randomNum(numUser);
+	}
 
-	if (+numberUser > num) {
-		return randomNum(prompt('Меньше! Сделайте ещё одну попытку', ''));
-	};
+	if (+numUser > num) {
+		alert('Меньше!');
+		return randomNum();
+	}
 
-	if (+numberUser < num) {
-		return randomNum( prompt('Больше! Сделайте ещё одну попытку', ''));
-	};
+	if (+numUser < num) {
+		alert('Больше!');
+		return randomNum();
+	}
 
-	if (+numberUser === num) {
-		res = alert('Правильно!');
-	};
+	if (+numUser === num) {
+		alert('Правильно!');
+	}
 }
-randomNum(numberUser);
+randomNum();
 
 
-// if (!Number.isFinite(numberUser) || !Number.isInteger(numberUser) || numberUser > 100 || numberUser < 1) {
-	
-// 	return randomNum(prompt('Введите число', ''));
-// 	};
+
 
 

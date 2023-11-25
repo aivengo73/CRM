@@ -36,52 +36,52 @@
 // Для проверки работы функционала добавить 3 или более товаров в корзину
 // После вызвать метод print для вывода информации в консоль
 
-const cart = {
-	items: [],
-	totalPrice: 0,
-	count: 0,
-	getTotalPrice() {
-		return this.totalPrice;
-	},
-	add(name, price, amount = 1) {
-		const goods = {
-			name,
-			price,
-			amount
-		}
-		cart.items.push(goods);
-		this.calculateItemPrice();
-		this.increaseCount(amount);
+// const cart = {
+// 	items: [],
+// 	totalPrice: 0,
+// 	count: 0,
+// 	getTotalPrice() {
+// 		return this.totalPrice;
+// 	},
+// 	add(name, price, amount = 1) {
+// 		const goods = {
+// 			name,
+// 			price,
+// 			amount
+// 		}
+// 		cart.items.push(goods);
+// 		this.calculateItemPrice();
+// 		this.increaseCount(amount);
 
-	},
-	increaseCount(num) {
-		this.count += num;
-	},
+// 	},
+// 	increaseCount(num) {
+// 		this.count += num;
+// 	},
 
-	calculateItemPrice() {
-		this.totalPrice =	this.items.reduce((sum, item) => {
-			return sum + item.price * item.amount;
-		}, 0);
-	},
+// 	calculateItemPrice() {
+// 		this.totalPrice =	this.items.reduce((sum, item) => {
+// 			return sum + item.price * item.amount;
+// 		}, 0);
+// 	},
 
-	clear() {
-		count: 0;
-		items: [];
-		totalPrice: 0;
+// 	clear() {
+// 		count: 0;
+// 		items: [];
+// 		totalPrice: 0;
 
-	},
-	print() {
-		console.log(JSON.stringify(cart.items));
-		console.log(`TotalPrice: ${this.getTotalPrice()}`);
-	},
-};
+// 	},
+// 	print() {
+// 		console.log(JSON.stringify(cart.items));
+// 		console.log(`TotalPrice: ${this.getTotalPrice()}`);
+// 	},
+// };
 
-cart.add('часы', 20, 5);
-cart.add('коньки', 23, 10);
-cart.add('Мячь', 15, 12);
-cart.add('лыжи', 35, 70);
-cart.print();
-console.log(cart);
+// cart.add('часы', 20, 25);
+// cart.add('коньки', 23, 10);
+// cart.add('Мячь', 15, 12);
+// cart.add('лыжи', 345, 70);
+// cart.print();
+// console.log(cart);
 
 	// calculateItemPrice() {
 	// 	let sum = 0;
@@ -90,6 +90,58 @@ console.log(cart);
 	// 	}, 0);
 	// 	this.totalPrice = sum;
 	// },
+
+	//===========
+
+	const cart = {
+		items: [],
+		count: 0,
+		totalPrice: 0,
+		//Чтобы это предотвратить, необходимо свойство totalPrice сделать геттером который будет возвращать результат вызова метода calculateItemPrice
+	
+		get totalPrice() {
+			return this.calculateItemPrice();
+		},
+	
+		add(name, price, amount = 1) {
+			const goods = {
+				name,
+				price,
+				amount
+			}
+			this.items.push(goods);
+			this.increaseCount(amount);
+		},
+	
+		increaseCount(num) {
+			this.count += num;
+		},
+		// calculateItemPrice переделать таким образом, чтобы сумму он возвращал, а не записывал в свойство totalPrice
+		calculateItemPrice() {
+			this.items.reduce((sum, item) => {
+				return sum + item.price * item.amount;
+			}, 0);
+		},
+	
+		clear() {
+			this.count = 0;
+			this.items = [];
+		},
+	
+		print() {
+			console.log(JSON.stringify(cart.items));
+			console.log(`TotalPrice: ${this.totalPrice}`); // 25060
+		},
+	};
+	
+	cart.add('часы', 20, 25);
+	cart.add('коньки', 23, 10);
+	cart.add('Мячь', 15, 12);
+	cart.add('лыжи', 345, 70);
+	// Cannot set property totalPrice of #<Object> which has only a getter (Не удается задать суммарное значение свойства #, которое имеет только фильтр)
+	// cart.totalPrice = 10; 
+	cart.print();
+	console.log(cart);
 
 
 

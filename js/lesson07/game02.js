@@ -11,14 +11,14 @@
 
 /* задача не решена пока !!!! */
 
-let numGenerator = 0;
+// let numGenerator = 0;
 let countAll = 0;
 let numUser = 0;
 const numArray = [];
 
 /* бот предлагает ввести два числа, и загадывает случайное число в этом диапазоне */
-const n = prompt('Введите начало диапазона, число от 1 до 100', '10');
-const m = prompt('Введите конец диапазона, число от 1 до 100', '5');
+let n = prompt('Введите начало диапазона, число от 1 до 100', '10');
+let m = prompt('Введите конец диапазона, число от 1 до 100', '5');
 
 function guessRandomNum(numUser) {
 	let countUser = 0;
@@ -27,33 +27,26 @@ function guessRandomNum(numUser) {
 /* проверка на отмену */
 	if (n === null || m === null) {
 		return;
-	};
+	}
 	/* проверка на число начала диапазона while (!isNumber(n)) {
     n = prompt("Укажите начало диапазона") */
 	if (Number.isNaN(Number(n))) {
 
 		return n = +prompt('Введите начало диапазона, число от 1 до 100', '10')
-	};
+	}
 	/* проверка на число конец диапазона */
 	if (Number.isNaN(Number(m))) {
 		return m = +prompt('Введите конец диапазона, число от 1 до 100', '5')
-
-	};
-	
+	}
 	// if (n > m) {
 	// 	return guessRandomNum(numUser);
 	// };
 
 
-/* если диапазон от 50 до 100, то попыток бот даёт 15 */
-	if (+n >= 50 && +m <= 100) {
-		return countUser = 15;
-	};
-
 /* бот отграничивает количество попыток до 30% от количества цифр в диапазоне */
 	if (+n >= 1 && +m <= 100) {
 		return countUser = Math.floor(Math.abs((+n - +m) * 0.3));
-	};
+	}
 
 	countAll = countUser - count;
  
@@ -63,12 +56,12 @@ function guessRandomNum(numUser) {
 /* предлагаем ввести пользователю загаданное число */
 	if (numGenerator > +n && numGenerator < +m) {
 		return numUser = (prompt(`Я загадал число в этом диапазоне. У Вас будет ${countUser} попыток чтобы угадать его. Введите число`, ''));
-	};
+	}
 	
 	/* проверка на отмену */
 	if (numUser === null) {
 		return;
-	};
+	}
 
 	/* проверка на число */
 	if (Number.isNaN(Number(numUser))) {
@@ -76,7 +69,7 @@ function guessRandomNum(numUser) {
 
 		/* бот запоминает каждое число которое ввел пользователь и записывает в массив */
 		return numArray.push(numUser);
-	};
+	}
 
 
 /* если число пользователя меньше загаданного */
@@ -85,7 +78,7 @@ function guessRandomNum(numUser) {
 		numUser =	guessRandomNum(prompt('Меньше! Сделайте ещё одну попытку', ''));
 		/* бот запоминает каждое число которое ввел пользователь и записывает в массив */
 		return numArray.push(numUser);
-	};
+	}
 
 	/* если число пользователя больше загаданного */
 	if (+numUser < numGenerator) {
@@ -94,11 +87,12 @@ function guessRandomNum(numUser) {
 
 		/* бот запоминает каждое число которое ввел пользователь и записывает в массив */
 		return numArray.push(numUser);
-	};
+	}
 
 /* если число угадано */
 	if (+numUser === numGenerator) {
 		res = alert('Правильно!');
-	};
+	}
+
 }
 guessRandomNum(numUser);
