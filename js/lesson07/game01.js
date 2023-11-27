@@ -30,10 +30,6 @@
 const num = Math.floor(Math.random() * 100);
 console.log(num);
 
-
-
-//  numUser = 0;
-
 function randomNum() {
 
 	const	numUser = prompt("Введите число от 1 до 100", '');
