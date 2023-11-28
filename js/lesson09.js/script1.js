@@ -44,3 +44,16 @@ const UniqueIpAddresses = new Set({
 console.log('UniqueIpAddresses: ', UniqueIpAddresses);
 
 }
+
+function equalNumberUniqueIpAddresses() {
+
+
+	const UniqueIpAddresses = new Set(listIpv4);
+	
+	return [...new Set(UniqueIpAddresses)];
+	}
+	equalNumberUniqueIpAddresses();
+	
+	// const arr = [1, 2, 3, 4, 7, 1, 2, 6, 5, 7, 7, 9, 10, 0, 5, 6, 7];
+	// console.log(Array.from(new Set(arr)));
+	let num = fontSize(res)

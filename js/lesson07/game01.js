@@ -28,15 +28,13 @@
 
 
 const num = Math.floor(Math.random() * 100);
-console.log(num);
+
+const isNumber = function (numUser) {
+	return !isNaN(parseFloat(numUser)) && isFinite(numUser);
+};
 
 function randomNum() {
-
 	const	numUser = prompt("Введите число от 1 до 100", '');
-
-	const isNumber = function (numUser) {
-		return !isNaN(parseFloat(numUser)) && isFinite(numUser);
-	};
 
 	if (numUser === null) {
 		return;
