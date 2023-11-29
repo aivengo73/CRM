@@ -33,34 +33,49 @@
 	14. "Правильно" делаем return со значением числа пользователя и выводом на экран "Правильно"
 	15. Заканчиваем игру. */
 
+	
+	const isNumber = function (numUser) {
+		return !isNaN(parseFloat(numUser)) && isFinite(numUser);
+	};
+
 	function randomNum() {
 
 		const n = +prompt('Введите число начало диапазона', '');
+
 		if (n === 0) return;
-	
-		const m = +prompt('Введите число конец диапазона', '');
-		if (m === 0) return;
-		
-		const numberAttempts = Math.floor(Math.abs((n - m) * 0.3)); // попытки
-		const num = Math.floor(Math.random() * (m - n) + n); // число для угадывания
-		let count = 0;
-		const numUserArr = [];
-	
-		const isNumber = function (numUser) {
-			return !isNaN(parseFloat(numUser)) && isFinite(numUser);
-		};
-	
-		if (!isNumber(n) || !isNumber(m) || n < 1 || m > 100) {
+
+		if (!isNumber(n) || n < 1 || n > 100) {
 			alert('Введите число от 1 до 100');
 			return randomNum();
 		}
-	
-	
+
+		const m = +prompt('Введите число конец диапазона', '');
+
+		if (m === 0) return;
+
+		if (!isNumber(m) || m < 1 || m > 100) {
+			alert('Введите число от 1 до 100');
+			return randomNum();
+		}
+
+		const numberAttempts = Math.floor(Math.abs((m - n) * 0.3)); // попытки
+		const num = Math.floor(Math.random() * (m - n) + n); // число для угадывания
+		let count = 0;
+		const numUserArr = [];
+
+		
 		while (count < numberAttempts) {
 			const numUser = +prompt(`Введите число от ${n} до ${m}`); // ответ игрока
 	
 			if (numUser === 0) {
 				break;
+			}
+
+			if (!isNumber(numUser) || numUser < n || numUser > m) {
+				// alert(`Введите число от ${n} до ${m}`);
+				+prompt(`Введите число от ${n} до ${m}`);
+				// return randomNum();
+				continue;
 			}
 	
 			const elementCheck = numUserArr.find(item => item === numUser);
@@ -93,3 +108,9 @@
 		}
 	}
 	randomNum();
+
+	
+		// if (!isNumber(n) || !isNumber(m) || n < 1 || m > 100) {
+		// 	alert('Введите число от 1 до 100');
+		// 	return randomNum();
+		// }
