@@ -18,7 +18,7 @@
 const cart = {
   items: [],
   count: 0,
-  // totalPrice: 0,
+
   /* Чтобы это предотвратить, необходимо свойство totalPrice сделать геттером
  который будет возвращать результат вызова метода calculateItemPrice */
 
@@ -63,6 +63,5 @@ cart.add('лыжи', 345, 70);
 /* Cannot set property totalPrice of #<Object> which has only a getter
 (Не удается задать суммарное значение свойства #, которое имеет только фильтр)*/
 
-cart.totalPrice = 10;
 cart.print();
 console.log(cart);
