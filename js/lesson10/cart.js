@@ -55,3 +55,5 @@ cart.add('лыжи', 345, 70);
 
 cart.print();
 console.log(cart);
+
+const FIGURES_RUS = ['камень', 'ножницы', 'бумага'];
